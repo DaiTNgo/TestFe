@@ -1,0 +1,39 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #e5e7ee;
+	padding: 2rem 4rem;
+	ul {
+		display: flex;
+		padding: 0;
+		margin: 0;
+		align-items: center;
+		li + li {
+			margin-left: 3rem;
+		}
+		li.active {
+			border: 1px solid #cfd9eb;
+			background-color: #f5f8ff;
+			color: #143f84;
+			border-radius: 3px;
+		}
+		li {
+			padding: 0.5rem 1rem;
+			color: #5c5e67;
+		}
+	}
+	.user {
+		display: flex;
+		align-items: center;
+		&_img {
+			width: 4rem;
+			height: 4rem;
+			border-radius: 1rem;
+			object-fit: cover;
+		}
+		&_name {
+			margin-left: 1rem;
+			color: #5c5e67;
+		}
+	}
+}

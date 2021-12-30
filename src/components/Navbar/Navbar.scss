@@ -3,6 +3,9 @@
 	justify-content: space-between;
 	border-bottom: 1px solid #e5e7ee;
 	padding: 2rem 4rem;
+	@media screen and (max-width: 700px) {
+		padding: 1rem 2rem;
+	}
 	ul {
 		display: flex;
 		padding: 0;
@@ -10,6 +13,9 @@
 		align-items: center;
 		li + li {
 			margin-left: 3rem;
+			@media screen and(max-width:600px) {
+				display: none;
+			}
 		}
 		li.active {
 			border: 1px solid #cfd9eb;

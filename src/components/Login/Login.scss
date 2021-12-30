@@ -20,6 +20,9 @@ $color-border: #f3f8ff;
 		background-color: #ffffff;
 
 		border-radius: 1rem;
+		@media screen and (max-width: 576px) {
+			height: 100%;
+		}
 	}
 
 	.title {

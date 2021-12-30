@@ -3,14 +3,25 @@ $color-th: #989ba6;
 .all_users {
 	padding: 5rem;
 	background-image: linear-gradient(45deg, #f8f3ea, #d4fcf2);
+	min-height: 100vh;
+	@media screen and (max-width: 700px) {
+		padding: 0;
+	}
 	.container {
 		background-color: #fff;
 		border-radius: 2rem;
 		width: 100%;
 		height: 100%;
+		@media screen and (max-width: 700px) {
+			border-radius: 0;
+			min-height: 100vh;
+		}
 	}
 	.wrapper-pd {
 		padding: 2rem 4rem;
+		@media screen and (max-width: 700px) {
+			padding: 1rem 2rem;
+		}
 	}
 	.header {
 		display: flex;
@@ -19,6 +30,9 @@ $color-th: #989ba6;
 		.title {
 			font-size: 4rem;
 			line-height: 1.2;
+			@media screen and(max-width:500px) {
+				font-size: 3.6rem;
+			}
 		}
 		button {
 			padding: 0.5rem 1rem;
@@ -67,6 +81,9 @@ $color-th: #989ba6;
 			font-weight: 500;
 			font-size: 1.8rem;
 			white-space: nowrap;
+			@media screen and(max-width:500px) {
+				font-size: 1.6rem;
+			}
 			+ th {
 				padding-left: 1rem;
 			}
@@ -88,6 +105,9 @@ $color-th: #989ba6;
 				padding: 1rem 0;
 				font-weight: 300;
 				background-color: #fff;
+				@media screen and(max-width:500px) {
+					font-size: 1.4rem;
+				}
 				&:first-child {
 					position: sticky;
 					top: 0;

@@ -37,7 +37,7 @@ function AllUsers() {
                             </thead>
                             <tbody>
                                 {
-                                    users.slice(0, 10).map((user, index) => {
+                                    users.slice(0, 15).map((user, index) => {
                                         return (
                                             <tr key={index}>
                                                 <td>{
@@ -70,6 +70,15 @@ function AllUsers() {
                                 }
                             </tbody>
                         </table>
+                    </div>
+                    <div className="bottom">
+                        <div className="left">
+                            1-5 of 47
+                        </div>
+                        <div className="right">
+                            <i class="fa fa-arrow-left"></i>
+                            <i class="fa fa-arrow-right"></i>
+                        </div>
                     </div>
                 </div>
             </div>

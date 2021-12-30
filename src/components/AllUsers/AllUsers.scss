@@ -97,4 +97,24 @@ $color-th: #989ba6;
 			}
 		}
 	}
+	.bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1.5rem;
+		background-color: #fafbff;
+		border-radius: 0 0 0.4rem 0.4rem;
+		.right {
+			i {
+				padding: 0.5rem;
+				background-color: #fff;
+				border: 1px solid #e0e1e9;
+				border-radius: 0.4rem;
+				cursor: pointer;
+				& + i {
+					margin-left: 2rem;
+				}
+			}
+		}
+	}
 }

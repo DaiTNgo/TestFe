@@ -1,0 +1,45 @@
+.addUser {
+	width: 100vw;
+	height: 100vh;
+	background-image: linear-gradient(45deg, #f8f3ea, #d4fcf2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.container {
+		width: 70rem;
+		background-color: #fff;
+		border-radius: 0.5rem;
+		padding: 2rem;
+	}
+	h1 {
+		text-align: center;
+		font-size: 4rem;
+		color: #31507d;
+	}
+	.form_controller {
+		display: flex;
+		flex-direction: column;
+		input {
+			display: block;
+			width: 100%;
+			padding: 0.5rem 1rem;
+			border-radius: 0.4rem;
+			border: 1px solid #a7abb1;
+		}
+	}
+	select {
+		margin-left: 1rem;
+	}
+	label {
+		margin-bottom: 1.5rem;
+	}
+	button {
+		font-size: 2rem;
+		padding: 1rem 1rem;
+		background-color: #267fff;
+		color: #fff;
+		border: none;
+		cursor: pointer;
+		border-radius: 0.4rem;
+	}
+}

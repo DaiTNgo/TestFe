@@ -7,16 +7,33 @@ export const getAllUsers = createAsyncThunk('/all-users', async () => {
             TokenCyberSoft: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJGcm9udCBFbmQgNjYiLCJIZXRIYW5TdHJpbmciOiIzMC8wMy8yMDIyIiwiSGV0SGFuVGltZSI6IjE2NDg1OTg0MDAwMDAiLCJuYmYiOjE2MTc1NTU2MDAsImV4cCI6MTY0ODc0NjAwMH0.tGlHI6jAW8M3mO7Dr-d_T9wEx2Vg5Tnw5EKxqahO-6E'
         }
     });
+
     return res.data.content
+})
+
+export const addUser = createAsyncThunk('/add-user', async (user) => {
+    const accessToken = JSON.parse(localStorage.getItem('accessToken'))
+    const res = await axios({
+        method: 'post',
+        url: 'https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung',
+        headers: {
+            TokenCyberSoft: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJGcm9udCBFbmQgNjYiLCJIZXRIYW5TdHJpbmciOiIzMC8wMy8yMDIyIiwiSGV0SGFuVGltZSI6IjE2NDg1OTg0MDAwMDAiLCJuYmYiOjE2MTc1NTU2MDAsImV4cCI6MTY0ODc0NjAwMH0.tGlHI6jAW8M3mO7Dr-d_T9wEx2Vg5Tnw5EKxqahO-6E',
+            Authorization: `Bearer ${accessToken}`
+        },
+        data: {
+            ...user
+        }
+    });
+    return res.data;
 })
 
 const userSlice = createSlice({
     name: 'user',
     initialState: {
-        allUsers: []
+        allUsers: [],
+        isFetching: false,
     },
     reducers: {
-
     }
     , extraReducers: {
         [getAllUsers.pending]: (state) => {
@@ -28,6 +45,21 @@ const userSlice = createSlice({
         },
         [getAllUsers.rejected]: (state) => {
             console.log('Failed to get all users');
+        },
+
+        [addUser.pending]: (state) => {
+            state.isFetching = true;
+            console.log('Add user to backend');
+        },
+        [addUser.fulfilled]: (state, action) => {
+            state.isFetching = false;
+            console.log('Done');
+            // state.allUsers = action.payload;
+            console.log(action)
+        },
+        [addUser.rejected]: (state) => {
+            state.isFetching = false;
+            console.log('Failed to add user');
         },
 
     }

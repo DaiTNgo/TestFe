@@ -1,7 +1,7 @@
-import { userSelector, getAllUsers } from '../../redux/userSlice';
-import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { getAllUsers, userSelector } from '../../redux/userSlice';
 import Navbar from '../Navbar';
 import './AllUsers.scss';
 function AllUsers() {

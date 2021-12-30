@@ -1,11 +1,11 @@
-import './CreateUser.scss';
-import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-import * as yup from 'yup';
-import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import * as yup from 'yup';
 import { addUser } from '../../redux/userSlice';
+import './CreateUser.scss';
 
 let schema = yup.object().shape({
 	hoTen: yup.string().required('Không được bỏ trống'),
@@ -27,7 +27,6 @@ function CreateUser() {
 		reset,
 	} = useForm({ resolver: yupResolver(schema) });
 	const dispatch = useDispatch();
-	const isFetching = useSelector((state) => state.user.isFetching);
 	const onSubmit = async (data) => {
 		dispatch(addUser(data));
 		reset();
